@@ -42,7 +42,7 @@ To run this project locally, follow these steps:
 2. Open your web browser and navigate to http://127.0.0.1:5000 to access the app.
 
 
-  # Project Structure
+   # Project Structure
    ```bash
    /mysite
    ├── vad_app.py        # Main Flask application
