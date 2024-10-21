@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Activity Detection System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        #warnings {
+            margin-top: 20px;
+            border: 1px solid #007BFF;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;  /* Initially hidden */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .warning {
+            color: #dc3545;  /* Red color for warnings */
+        }
+    </style>
+</head>
+<body>
+    <h1>Voice Activity Detection System</h1>
+    <button id="start-button">Start VAD</button>
+    <div id="warnings"></div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let vadActive = false;
+
+        $('#start-button').click(function() {
+            if (!vadActive) {
+                vadActive = true;
+                $('#warnings').show();
+                $('#warnings').empty().append('<p>VAD has started! Monitoring for voice activity...</p>');
+                fetchWarnings();  // Start fetching warnings
+            }
+        });
+
+        function fetchWarnings() {
+            $.getJSON('/get_warnings', function(data) {
+                $('#warnings').empty();
+                data.warnings.forEach(function(warning) {
+                    $('#warnings').append('<p class="warning">' + warning + '</p>');
+                });
+            });
+        }
+
+        setInterval(fetchWarnings, 1000);  // Fetch warnings every second
+    </script>
+</body>
+</html>
