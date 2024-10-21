@@ -23,30 +23,26 @@ To run this project locally, follow these steps:
    ```bash
    git clone <repository-url>
    cd <repository-directory>
-   ```bash
 
 2. Create a virtual environment:
     ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```bash
 
 3. Install the required packages:
     ```bash
     pip install -r requirements.txt
-    ```bash
 
 ## Usage
 
 1. Run the Flask application:
     ```bash
     python vad_app.py
-    ```bash
 
 2. Open your web browser and navigate to http://127.0.0.1:5000 to access the app.
 
 
-## Project Structure
+  # Project Structure
    ```bash
    /mysite
    ├── vad_app.py        # Main Flask application
@@ -55,9 +51,8 @@ To run this project locally, follow these steps:
    ├── static            # Static files (CSS, JS, images)
    ├── requirements.txt   # Python dependencies
    └── README.md          # Project documentation
-    ```bash
 
-## Technologies Used
+# Technologies Used
 
 - **Python**: Programming language for backend development.
 - **Flask**: Web framework for creating the web application.
