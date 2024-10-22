@@ -46,9 +46,8 @@ To run this project locally, follow these steps:
    ```bash
    /mysite
    ├── vad_app.py        # Main Flask application
-   ├── templates         # HTML templates
+   ├── templates         # HTML template
    │   └── index.html    # Main page for the application
-   ├── static            # Static files (CSS, JS, images)
    ├── requirements.txt   # Python dependencies
    └── README.md          # Project documentation
 
