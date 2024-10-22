@@ -13,7 +13,7 @@ The Voice Activity Detection (VAD) System is a Flask web application designed to
 
 ## Live Demo
 There is a small dependency issue with PyAudio, as soon as it is solved,
-you will be able access the live application soon at: [Voice Activity Detection System](https://chiragtiwari6842.pythonanywhere.com/)
+you will be able access the live application at: [Voice Activity Detection System](https://chiragtiwari6842.pythonanywhere.com/)
 
 ## Installation
 
